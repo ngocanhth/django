@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
+from .models import department as department_model
 # Create your views here.
 
 def get_home(request):
-    # return render(request, 'home.html')
-    return render(request, template_name = "home.html", context={"name":"Ngoc Anh"})
+    department_list = department_model.objects.filter().order_by('department_id')
+    return render(request, 'home.html', {"department_list" : department_list})
+    # return render(request, template_name = "home.html", context={"name":"Ngoc Anh"})

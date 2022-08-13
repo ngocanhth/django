@@ -16,23 +16,21 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Home page</h1>
+        <h1>Danh sach nhan vien phong {{department.name}}</h1>
         <table class="table__specification w-100 table-reset text-white">
             <thead>
                 <tr>
                   <th scope="col">STT</th>
-                  <th scope="col">Tên phòng</th>
-                  <th scope="col">Chi tiet</th>
+                  <th scope="col">Tên</th>
+                  <th scope="col">Tuoi</th>
                 </tr>
               </thead>
             <tbody>
-                {% for department in department_list %}
+                {% for employee in employees_list %}
                     <tr>
-                        <td>{{department.department_id}}</td>
-                        <td>{{department.name}}</td>
-                        <td>
-                            <a href="/department/{{department.department_id}}">Chi tiet</a>
-                        </td>
+                        <td>{{employee.department_id}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.age}}</td>
                     </tr>
                 {%  endfor %}
             

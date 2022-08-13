@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home import views as home
+from employees import views as employees
 
 urlpatterns = [
     path('', home.get_home),
     path('admin/', admin.site.urls),
+    path('department/<int:id>/', employees.get_employees),
 ]
 
 admin.site.site_header = 'admin_dev'
