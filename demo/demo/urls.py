@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from home import views as home
 from employees import views as employees
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', home.get_home),
     path('admin/', admin.site.urls),
     path('department/<int:id>/', employees.get_employees),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = 'admin_dev'
