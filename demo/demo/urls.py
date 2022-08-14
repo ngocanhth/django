@@ -24,6 +24,8 @@ urlpatterns = [
     path('', home.get_home),
     path('admin/', admin.site.urls),
     path('department/<int:id>/', employees.get_employees),
+    path('addemployeeForm/', employees.get_employee_form),
+    path('addEmployee', employees.add_employee),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = 'admin_dev'

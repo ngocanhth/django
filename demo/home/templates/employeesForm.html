@@ -1,0 +1,38 @@
+{% extends 'layout/1column.html' %}
+{% block body%} 
+   <h3>Them nhan vien<h3>
+        <form class="w-50 mx-auto" action="/addEmployee" method="post" enctype=multilpart/form-data>
+            {% csrf_token %}
+
+            <div class="form-group">
+              <label for="department">Phòng ban</label>
+              <select class="form-control" id="department">
+                <option>Select a department</option>
+                
+                {% for department in department_list %}
+                    <option value={{department.id}}>{{department.name}}</option>
+                {%  endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="fullname">Tên nhân viên</label>
+                <input type="text" class="form-control" id="fullname" placeholder="Tên nhân viên">
+            </div>
+            <div class="form-group">
+                <label for="age">Tuổi</label>
+                <input type="text" class="form-control" id="age" placeholder="Tuổi">
+            </div>
+            <div class="form-group">
+              <label for="avatar">Ảnh đại diện</label>
+              <input type="file" class="form-control" id="avatar" placeholder=">Ảnh đại diện">
+            </div>
+            <div class="form-group">
+                <label for="cv">CV</label>
+                <input type="file" class="form-control" id="cv" placeholder=">CV">
+              </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+{% endblock %}
