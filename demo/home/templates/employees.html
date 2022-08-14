@@ -11,6 +11,8 @@
                 <th scope="col">STT</th>
                 <th scope="col">Tên</th>
                 <th scope="col">Tuoi</th>
+                <th scope="col">Avatar</th>
+                <th scope="col">CV</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +21,16 @@
                         <td>{{employee.department_id}}</td>
                         <td>{{employee.name}}</td>
                         <td>{{employee.age}}</td>
+                        <td>
+                            {% if employee.avatar %}
+                                <img src="/home/media/{{employee.avatar}}" width="70px"/>
+                            {%  endif %}
+                        </td>
+                        <td>
+                            {% if employee.cv %}
+                                <a  target="_blank" href="/home/media/{{employee.cv}}">CV</a>
+                            {%  endif %}
+                        </td>
                     </tr>
                 {%  endfor %}
             

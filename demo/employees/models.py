@@ -13,4 +13,4 @@ class employee(models.Model):
     cv = models.FileField(upload_to='files', null=False, default=None)
    
     def __str__(self):
-        return f"{self.employee_id}, {self.department_id}, {self.i}, {self.age}, {self.avatar}, {self.cv}"
+        return f"{self.employee_id}, {self.department_id}, {self.name}, {self.age}, {self.avatar}, {self.cv}"
